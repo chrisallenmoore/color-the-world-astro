@@ -9,7 +9,6 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: "https://chrisallenmoore.github.io",
   base: "/",
-  trailingSlash: "always",
   vite: {
     ssr: {
       external: ["svgo"],
