@@ -31,13 +31,13 @@ const allCategoriesData = generateCategoryData(content.categories);
           <div class="mr-4 flex-shrink-0 self-center">
             <img
               class="h-12 w-12 rounded-full"
-              src=`/images/team/${content.authorUrl}.jpg`
+              src={`/images/team/${content.authorUrl}.jpg`}
               alt={content.author}
             />
           </div>
           <div>
             <a
-              href=`/team/${content.authorUrl}/`
+              href={`/team/${content.authorUrl}/`}
               class="text-md font-semibold mb-1 capitalize"
               >{content.author}
             </a>
