@@ -28,6 +28,7 @@
       </div>
     </nav>
     <div class="mt-8 flex justify-center space-x-6">
+      <!--
       <a href="#" class="text-zinc-900 hover:text-paradiso-600">
         <span class="sr-only">Facebook</span>
         <svg
@@ -90,9 +91,14 @@
           />
         </svg>
       </a>
+    -->
 
-      <a href="#" class="text-zinc-900 hover:text-paradiso-700">
-        <span class="sr-only">Dribbble</span>
+      <a
+        target="_blank"
+        href="https://www.amazon.com/First-Toddler-Coloring-Book-Kindergarten/dp/B0B86ZBN37"
+        class="text-zinc-900 hover:text-paradiso-700"
+      >
+        <span class="sr-only">Amazon</span>
         <svg
           class="h-6 w-6"
           fill="currentColor"
