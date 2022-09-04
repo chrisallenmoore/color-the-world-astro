@@ -8,7 +8,7 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: "https://chrisallenmoore.github.io",
-  base: "/colortheworld",
+  base: "/color-the-world-astro",
   trailingSlash: "always",
   vite: {
     ssr: {
