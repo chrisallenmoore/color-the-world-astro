@@ -10,8 +10,8 @@ const allTagsData = generateTagData(content.tags);
 
 <BaseLayout>
   <section class="py-10 px-4 sm:px-6 w-full mx-auto max-w-screen-2xl">
-    <div class="flex">
-      <div class="basis-2/3">
+    <div class="flex flex-col md:flex-row">
+      <div class="w-full md:basis-1/2">
         <div class="mb-6 flex justify-start gap-1.5">
           {
             allTagsData.map((tag) => (
@@ -24,7 +24,7 @@ const allTagsData = generateTagData(content.tags);
         <h1 class="text-6xl font-bold pb-8">{content.title}</h1>
         <p class="text-xl font-medium mb-4">{content.description}</p>
       </div>
-      <div class="basis-1/2 text-center">
+      <div class="w-full md:basis-1/2 text-center">
         <figure>
           <div class="flex justify-center">
             <div class="border border-zinc-900 rounded-2xl overflow-hidden">

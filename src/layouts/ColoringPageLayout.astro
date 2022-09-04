@@ -10,8 +10,8 @@ const allTagsData = generateTagData(content.tags);
 
 <BaseLayout>
   <section class="py-10 px-4 sm:px-6 w-full mx-auto max-w-screen-2xl">
-    <div class="flex">
-      <div class="basis-2/3">
+    <div class="flex flex-col md:flex-row">
+      <div class="w-full md:basis-2/3">
         <div class="mb-6 flex justify-start gap-1.5">
           {
             allTagsData.map((tag) => (
@@ -31,13 +31,13 @@ const allTagsData = generateTagData(content.tags);
           <div class="mr-4 flex-shrink-0 self-center">
             <img
               class="h-12 w-12 rounded-full"
-              src=`/images/team/${content.authorImage}`
+              src={`/images/team/${content.authorImage}`}
               alt={content.author}
             />
           </div>
           <div>
             <a
-              href=`/team/${content.authorUrl}`
+              href={`/team/${content.authorUrl}`}
               class="text-md font-semibold mb-1 capitalize"
               >{content.author}
             </a>
@@ -49,7 +49,7 @@ const allTagsData = generateTagData(content.tags);
           </div>
         </div>
       </div>
-      <div class="basis-1/2 text-center">
+      <div class="w-full md:basis-1/2 text-center">
         <figure>
           <div class="flex justify-center">
             <img
