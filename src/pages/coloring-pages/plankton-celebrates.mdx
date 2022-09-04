@@ -1,0 +1,40 @@
+---
+layout: "../../layouts/ColoringPageLayout.astro"
+title: Plankton celebrates
+description: "Plankton celebrates big in this coloring page. Free coloring page."
+date: Jul 11, 2022
+author: chris allen moore
+authorUrl: chris
+authorImage: chris.jpg
+featuredImage: plankton-celebrates-split-screen.webp
+featuredImageAlt: Plankton celebrates (recreated)
+coloringPageImage: plankton-celebrates-coloring-page.webp
+coloringPageAlt: Plankton celebrates coloring page (recreated)
+tags:
+  - Coloring Pages
+  - Plankton
+  - SpongeBob Squarepants
+---
+
+Plankton doesn't win very often. He is usually thwarted by [SpongeBob Squarepants](https://colortheworld.art/tags/spongebob-squarepants/) and Mr. Krabs. So he celebrates big for every win!
+
+Get this FREE coloring page below. ↓
+
+<figure class="text-center mt-0">
+  <img
+    src={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    alt={frontmatter.coloringPageAlt}
+    class="w-full"
+  />
+  <figcaption class="text-sm">{frontmatter.coloringPageAlt}</figcaption>
+</figure>
+
+<div class="text-center">
+  <a
+    target="_blank"
+    href={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    class="no-underline bg-paradiso-600 hover:bg-paradiso-700 text-white py-4 px-5 rounded-full leading-normal"
+  >
+    <span>Print this coloring page</span>
+  </a>
+</div>

@@ -1,0 +1,37 @@
+---
+layout: "../../layouts/ColorWithUsBlogPostLayout.astro"
+title: Color with us - SpongeBob has an idea
+description: "Color along with Doyle as he colors the 'SpongeBob has an idea' coloring page. Get the free coloring page."
+date: June 10, 2022
+author: chris allen moore
+authorUrl: chris
+featuredImage: color-with-us-spongebob-has-an-idea-color.webp
+featuredImageAlt: Color With Us - SpongeBob has an idea
+youTubeVideoUrl: https://youtu.be/rfmhxGfXCB8
+youTubeVideoCaption: 'Color along with Doyle as he colors the "SpongeBob Has An Idea" coloring page.'
+coloringPageUrl: spongebob-has-an-idea
+categories:
+  - Color With Us
+---
+
+import { YouTube } from "@astro-community/astro-embed-youtube";
+
+Color along. Join Doyle as he colors the "SpongeBob has and idea" coloring page.
+
+<YouTube id={frontmatter.youTubeVideoUrl} />
+
+<p class="text-sm text-center">{frontmatter.youTubeVideoCaption}</p>
+
+<a target="_blank" href={frontmatter.youTubeVideoUrl}>
+  {frontmatter.title} on YouTube
+</a>
+
+<div class="text-center my-12">
+  <a
+    target="_blank"
+    href={`/coloring-pages/${frontmatter.coloringPageUrl}/`}
+    class="no-underline bg-paradiso-600 hover:bg-paradiso-700 text-white py-4 px-5 rounded-full leading-normal"
+  >
+    <span>Get the coloring page</span>
+  </a>
+</div>

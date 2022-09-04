@@ -1,0 +1,39 @@
+---
+layout: "../../layouts/ColoringPageLayout.astro"
+title: Happy three-eyed alien
+description: "A happy three-eyed alien. Free coloring page."
+date: June 20, 2022
+author: chris allen moore
+authorUrl: chris
+authorImage: chris.jpg
+featuredImage: happy-three-eyed-alien-split-screen.webp
+featuredImageAlt: Happy three-eyed alien (recreated)
+coloringPageImage: happy-three-eyed-alien-coloring-page.webp
+coloringPageAlt: Happy three-eyed alien coloring page (recreated)
+tags:
+  - Coloring Pages
+  - Aliens
+---
+
+Ever seen a three-eyed alien? This one is super happy that it's found you. It loves to be colored.
+
+Get this FREE coloring page below. ↓
+
+<figure class="text-center mt-0">
+  <img
+    src={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    alt={frontmatter.coloringPageAlt}
+    class="w-full"
+  />
+  <figcaption class="text-sm">{frontmatter.coloringPageAlt}</figcaption>
+</figure>
+
+<div class="text-center">
+  <a
+    target="_blank"
+    href={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    class="no-underline bg-paradiso-600 hover:bg-paradiso-700 text-white py-4 px-5 rounded-full leading-normal"
+  >
+    <span>Print this coloring page</span>
+  </a>
+</div>

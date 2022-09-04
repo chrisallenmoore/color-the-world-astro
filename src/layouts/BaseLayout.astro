@@ -1,0 +1,38 @@
+---
+// Component imports and setup JavaScript go here!
+import BaseHead from "../components/BaseHead.astro";
+import NavBar from "../components/Svelte/NavBar.svelte";
+import Footer from "../components/Svelte/Footer.svelte";
+const { title } = Astro.props;
+---
+
+<style is:global>
+  html {
+    @apply text-zinc-900;
+    @apply antialiased;
+  }
+  a:hover {
+    @apply transition;
+    @apply underline;
+  }
+
+  hr {
+    @apply md:mx-6;
+    @apply border-slate-300;
+  }
+  .pagination {
+    @apply w-full;
+    @apply mx-auto;
+    @apply text-center;
+  }
+</style>
+
+<BaseHead title={title} />
+
+<body>
+  <NavBar client:load />
+  <main>
+    <slot />
+  </main>
+  <Footer />
+</body>

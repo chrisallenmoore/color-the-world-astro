@@ -1,0 +1,39 @@
+---
+layout: "../../layouts/ColoringPageLayout.astro"
+title: Cute baby squirrel
+description: "This cute baby squirrel is so lovable. Free coloring page."
+date: June 14, 2022
+author: chris allen moore
+authorUrl: chris
+authorImage: chris.jpg
+featuredImage: cute-baby-squirrel-split-screen.webp
+featuredImageAlt: Cute baby squirrel (recreated)
+coloringPageImage: cute-baby-squirrel-coloring-page.webp
+coloringPageAlt: Cute baby squirrel coloring page (recreated)
+tags:
+  - Coloring Pages
+  - Squirrels
+---
+
+This cute baby squirrel is adorable and maybe is the first time out of the tree hollow.
+
+Get this FREE coloring page below. ↓
+
+<figure class="text-center mt-0">
+  <img
+    src={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    alt={frontmatter.coloringPageAlt}
+    class="w-full"
+  />
+  <figcaption class="text-sm">{frontmatter.coloringPageAlt}</figcaption>
+</figure>
+
+<div class="text-center">
+  <a
+    target="_blank"
+    href={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    class="no-underline bg-paradiso-600 hover:bg-paradiso-700 text-white py-4 px-5 rounded-full leading-normal"
+  >
+    <span>Print this coloring page</span>
+  </a>
+</div>

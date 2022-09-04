@@ -1,0 +1,39 @@
+---
+layout: "../../layouts/ColoringPageLayout.astro"
+title: Adorable elephant
+description: "Adorable elephant coloring page. Free coloring page."
+date: June 13, 2022
+author: chris allen moore
+authorUrl: chris
+authorImage: chris.jpg
+featuredImage: adorable-elephant-split-screen.webp
+featuredImageAlt: Adorable elephant (recreated)
+coloringPageImage: adorable-elephant-coloring-page.webp
+coloringPageAlt: Adorable elephant coloring page (recreated)
+tags:
+  - Coloring Pages
+  - Elephants
+---
+
+Everybody loves babies. Baby elephants are cute and this one is ready to be colored.
+
+Get this FREE coloring page below. ↓
+
+<figure class="text-center mt-0">
+  <img
+    src={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    alt={frontmatter.coloringPageAlt}
+    class="w-full"
+  />
+  <figcaption class="text-sm">{frontmatter.coloringPageAlt}</figcaption>
+</figure>
+
+<div class="text-center">
+  <a
+    target="_blank"
+    href={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    class="no-underline bg-paradiso-600 hover:bg-paradiso-700 text-white py-4 px-5 rounded-full leading-normal"
+  >
+    <span>Print this coloring page</span>
+  </a>
+</div>

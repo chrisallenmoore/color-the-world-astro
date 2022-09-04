@@ -1,0 +1,94 @@
+---
+// Component imports and setup JavaScript go here!
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { generateCategoryData } from "../../../utils/helpers.js";
+
+export async function getStaticPaths() {
+  const allPosts = await Astro.glob("../*.mdx");
+  const sortedPosts = allPosts.sort(
+    (a, b) =>
+      new Date(b.frontmatter.date).valueOf() -
+      new Date(a.frontmatter.date).valueOf()
+  );
+  const allCategoriesUnique = new Set();
+  sortedPosts.forEach((post) => {
+    post.frontmatter.categories &&
+      post.frontmatter.categories.map((category) => {
+        allCategoriesUnique.add(category);
+      });
+  });
+  const allCategoriesData = generateCategoryData(allCategoriesUnique);
+  // map through the categories array
+  return allCategoriesData.map((category) => {
+    // filter the posts that match the given category
+    const posts = sortedPosts.filter((post) =>
+      post.frontmatter.categories.includes(category.name)
+    );
+    return {
+      params: { slug: category.slug },
+      props: {
+        category: category.name,
+        posts: posts,
+      },
+    };
+  });
+}
+
+const { category, posts } = Astro.props;
+const postsCount = posts.length;
+const title = `Blog Posts with ${category}`;
+---
+
+<BaseLayout title={title}>
+  <section
+    class="py-10 px-4 sm:px-6 w-full mx-auto max-w-screen-2xl text-center"
+  >
+    <h1 class="text-6xl font-bold pb-8">
+      Blog Posts
+      <br />
+      <span class="text-2xl font-medium max-w-3xl mx-auto">
+        with {category}
+      </span>
+      <span
+        class="text-xl font-bold bg-gray-100 px-3 py-.5 rounded-full absolute"
+        >{postsCount}
+      </span>
+    </h1>
+  </section>
+  <div class="py-4 px-4 sm:px-6 w-full mx-auto max-w-screen-2xl">
+    <hr />
+  </div>
+  <section class="py-10 px-4 sm:px-6 w-full mx-auto max-w-screen-2xl">
+    <h2 class="text-xl">
+      Check out our awesome <strong>blog posts</strong> with <strong
+        >{category}
+      </strong>
+    </h2>
+    <div class="py-6 grid grid-cols-4 gap-3">
+      {
+        posts.map((post) => (
+          <article class="mb-6">
+            <div>
+              <a
+                class="border border-slate-900 rounded-3xl mb-4 flex overflow-hidden"
+                href={post.url}
+                class="p-2 border border-slate-900 rounded-3xl mb-4 flex"
+              >
+                <img
+                  src={`/images/blog/${post.frontmatter.featuredImage}/`}
+                  alt={post.frontmatter.featuredImageAlt}
+                />
+              </a>
+              <h3 class="overflow-hidden text-xl font-semibold hover:underline">
+                <a href={post.url} class="block">
+                  {post.frontmatter.title}
+                </a>
+              </h3>
+              <p>{post.frontmatter.description}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

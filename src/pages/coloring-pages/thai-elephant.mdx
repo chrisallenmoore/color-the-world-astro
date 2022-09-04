@@ -1,0 +1,41 @@
+---
+layout: "../../layouts/ColoringPageLayout.astro"
+title: Thai elephant
+description: "Coloring page of how Thai elephants draw an elephant. Free coloring page."
+date: June 13, 2022
+author: chris allen moore
+authorUrl: chris
+authorImage: chris.jpg
+featuredImage: thai-elephant-split-screen.webp
+featuredImageAlt: Thai elephant (recreated)
+coloringPageImage: thai-elephant-coloring-page.webp
+coloringPageAlt: Thai elephant coloring page (recreated)
+tags:
+  - Coloring Pages
+  - Elephants
+---
+
+We've been to elephant shows in Thailand. Some of the elephants could draw, and this coloring page is similar to how the elephants would draw a picture of an elephant.
+
+Enjoy this elephant coloring page!
+
+Get this FREE coloring page below. ↓
+
+<figure class="text-center mt-0">
+  <img
+    src={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    alt={frontmatter.coloringPageAlt}
+    class="w-full"
+  />
+  <figcaption class="text-sm">{frontmatter.coloringPageAlt}</figcaption>
+</figure>
+
+<div class="text-center">
+  <a
+    target="_blank"
+    href={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    class="no-underline bg-paradiso-600 hover:bg-paradiso-700 text-white py-4 px-5 rounded-full leading-normal"
+  >
+    <span>Print this coloring page</span>
+  </a>
+</div>

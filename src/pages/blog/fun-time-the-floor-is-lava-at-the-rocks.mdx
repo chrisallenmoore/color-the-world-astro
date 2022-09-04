@@ -1,0 +1,28 @@
+---
+layout: "../../layouts/BlogPostLayout.astro"
+title: Fun Time - the floor is lava (at the rocks)
+description: 'Lula and Doyle love to play "the floor is lava". We think we have one of the coolest places to play the game.'
+date: June 17, 2022
+author: chris allen moore
+authorUrl: chris
+featuredImage: fun-time-the-floor-is-lava-at-the-rocks.jpg
+featuredImageAlt: Color the World (Lula and Doyle) - The Floor is Lava (At the Rocks) episode
+youTubeVideoUrl: https://youtu.be/_ShuMNnOVC8
+youTubeVideoCaption: "Color the World (Lula and Doyle) - The Floor is Lava (At the Rocks) episode"
+categories:
+  - Fun Time
+---
+
+import { YouTube } from "@astro-community/astro-embed-youtube";
+
+Our village has some outstanding shared spaces. It's beautiful. One of Lula and Doyle's favorite things is to "go to the rocks".
+
+Lula and Doyle love to play "the floor is lava" there. We think it's one of the coolest places to play the game.
+
+Enjoy this episode where Lula and Doyle share with you their version of "the floor is lava!" Don't forget to share it with your friends.
+
+<YouTube id={frontmatter.youTubeVideoUrl} />
+
+<a target="_blank" href={frontmatter.youTubeVideoUrl}>
+  {frontmatter.title} on YouTube
+</a>

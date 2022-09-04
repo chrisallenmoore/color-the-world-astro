@@ -1,0 +1,42 @@
+---
+layout: "../../layouts/ColoringPageLayout.astro"
+title: Cute seal
+description: "A cute, playful seal coloring page. Free coloring page."
+date: Jul 9, 2022
+author: chris allen moore
+authorUrl: chris
+authorImage: chris.jpg
+featuredImage: cute-seal-split-screen.webp
+featuredImageAlt: Cute seal (recreated)
+coloringPageImage: cute-seal-coloring-page.webp
+coloringPageAlt: Cute seal coloring page (recreated)
+tags:
+  - Coloring Pages
+  - Seals
+  - Sea Life
+---
+
+Seals are playful animals who live in the sea.
+
+This cute seal wants to be colored.
+
+Get this FREE coloring page below. ↓
+
+<figure class="text-center mt-0">
+  <img
+    src={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    alt={frontmatter.coloringPageAlt}
+    class="w-full"
+  />
+  <figcaption class="text-sm">{frontmatter.coloringPageAlt}</figcaption>
+</figure>
+
+<div class="text-center">
+  <a
+    target="_blank"
+    href={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    class="no-underline bg-paradiso-600 hover:bg-paradiso-700 text-white py-4 px-5 rounded-full leading-normal"
+  >
+    <span>Print this coloring page</span>
+  </a>
+</div>

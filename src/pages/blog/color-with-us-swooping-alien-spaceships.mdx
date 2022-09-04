@@ -1,0 +1,37 @@
+---
+layout: "../../layouts/ColorWithUsBlogPostLayout.astro"
+title: Color with us - Swooping alien spaceships
+description: 'Color along with Doyle as he colors the "Swooping alien spaceships" coloring page. Get the free coloring page.'
+date: June 17, 2022
+author: chris allen moore
+authorUrl: chris
+featuredImage: color-with-us-swooping-alien-spaceships.webp
+featuredImageAlt: Color With Us - Swooping alien spaceships
+youTubeVideoUrl: https://youtu.be/rtNlyO70N_I
+youTubeVideoCaption: 'Color along with Doyle as he colors the "Swooping alien spaceships" coloring page.'
+coloringPageUrl: swooping-alien-spaceships
+categories:
+  - Color With Us
+---
+
+import { YouTube } from "@astro-community/astro-embed-youtube";
+
+Doyle loves aliens and spaceships.
+
+Color along. Join Doyle as he colors the "Swooping alien spaceships" coloring page.
+
+<YouTube id={frontmatter.youTubeVideoUrl} />
+
+<a target="_blank" href={frontmatter.youTubeVideoUrl}>
+  {frontmatter.title} on YouTube
+</a>
+
+<div class="text-center my-12">
+  <a
+    target="_blank"
+    href={`/coloring-pages/${frontmatter.coloringPageUrl}/`}
+    class="no-underline bg-paradiso-600 hover:bg-paradiso-700 text-white py-4 px-5 rounded-full leading-normal"
+  >
+    <span>Get the coloring page</span>
+  </a>
+</div>

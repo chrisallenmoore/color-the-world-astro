@@ -1,0 +1,40 @@
+---
+layout: "../../layouts/ColoringPageLayout.astro"
+title: Smiling octopus
+description: "Smiling octopus coloring page. Free coloring page."
+date: Jul 13, 2022
+author: chris allen moore
+authorUrl: chris
+authorImage: chris.jpg
+featuredImage: smiling-octopus-split-screen.webp
+featuredImageAlt: Smiling octopus (recreated)
+coloringPageImage: smiling-octopus-coloring-page.webp
+coloringPageAlt: Smiling octopus coloring page (recreated)
+tags:
+  - Coloring Pages
+  - Octopuses
+  - Sea Life
+---
+
+This octopus has a huge smile on its face.
+
+Get this FREE coloring page below. ↓
+
+<figure class="text-center mt-0">
+  <img
+    src={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    alt={frontmatter.coloringPageAlt}
+    class="w-full"
+  />
+  <figcaption class="text-sm">{frontmatter.coloringPageAlt}</figcaption>
+</figure>
+
+<div class="text-center">
+  <a
+    target="_blank"
+    href={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    class="no-underline bg-paradiso-600 hover:bg-paradiso-700 text-white py-4 px-5 rounded-full leading-normal"
+  >
+    <span>Print this coloring page</span>
+  </a>
+</div>

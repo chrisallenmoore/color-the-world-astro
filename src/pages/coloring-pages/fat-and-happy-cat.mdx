@@ -1,0 +1,39 @@
+---
+layout: "../../layouts/ColoringPageLayout.astro"
+title: Fat and happy cat
+description: "An adorable fat and happy cat. Free coloring page."
+date: June 20, 2022
+author: chris allen moore
+authorUrl: chris
+authorImage: chris.jpg
+featuredImage: fat-and-happy-cat-split-screen.webp
+featuredImageAlt: Fat and happy cat (recreated)
+coloringPageImage: fat-and-happy-cat-coloring-page.webp
+coloringPageAlt: Fat and happy cat coloring page (recreated)
+tags:
+  - Coloring Pages
+  - Cats
+---
+
+This big cat is adorable! Color this happy cat your favorite colors.
+
+Get this FREE coloring page below. ↓
+
+<figure class="text-center mt-0">
+  <img
+    src={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    alt={frontmatter.coloringPageAlt}
+    class="w-full"
+  />
+  <figcaption class="text-sm">{frontmatter.coloringPageAlt}</figcaption>
+</figure>
+
+<div class="text-center">
+  <a
+    target="_blank"
+    href={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    class="no-underline bg-paradiso-600 hover:bg-paradiso-700 text-white py-4 px-5 rounded-full leading-normal"
+  >
+    <span>Print this coloring page</span>
+  </a>
+</div>

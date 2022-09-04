@@ -1,0 +1,35 @@
+---
+layout: "../../layouts/ColorWithUsBlogPostLayout.astro"
+title: Color with us - Kwaii unicorn
+description: 'Color along with Lula as she colors the "Kwaii unicorn" coloring page. Get the free coloring page.'
+date: June 10, 2022
+author: chris allen moore
+authorUrl: chris
+featuredImage: color-with-us-kwaii-unicorn.webp
+featuredImageAlt: Color With Us - A cute kwaii unicorn (recreated)
+youTubeVideoUrl: https://youtu.be/wY3bmRBFF0g
+youTubeVideoCaption: 'Color along with Lula as she colors the "Kwaii unicorn" coloring page.'
+coloringPageUrl: kwaii-unicorn
+categories:
+  - Color With Us
+---
+
+import { YouTube } from "@astro-community/astro-embed-youtube";
+
+Color along. Join Lula as she colors the "Kwaii unicorn" coloring page.
+
+<YouTube id={frontmatter.youTubeVideoUrl} />
+
+<a target="_blank" href={frontmatter.youTubeVideoUrl}>
+  {frontmatter.title} on YouTube
+</a>
+
+<div class="text-center my-12">
+  <a
+    target="_blank"
+    href={`/coloring-pages/${frontmatter.coloringPageUrl}/`}
+    class="no-underline bg-paradiso-600 hover:bg-paradiso-700 text-white py-4 px-5 rounded-full leading-normal"
+  >
+    <span>Get the coloring page</span>
+  </a>
+</div>

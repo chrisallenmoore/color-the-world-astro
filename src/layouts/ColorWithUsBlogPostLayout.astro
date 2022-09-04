@@ -1,0 +1,72 @@
+---
+// Component imports and setup JavaScript go here!
+import BaseLayout from "./BaseLayout.astro";
+import { generateCategoryData } from "../utils/helpers.js";
+import dayjs from "dayjs";
+
+const { content } = Astro.props;
+const allCategoriesData = generateCategoryData(content.categories);
+---
+
+<BaseLayout>
+  <section class="py-10 px-4 sm:px-6 w-full mx-auto max-w-screen-2xl">
+    <div class="flex">
+      <div class="basis-2/3">
+        <div class="mb-6 flex justify-start gap-1.5">
+          {
+            allCategoriesData.map((category) => (
+              <a
+                class="bg-zinc-100 px-3 py-1 rounded-full leading-1 text-sm font-medium hover:bg-zinc-200"
+                href={`/blog/categories/${category.slug}/`}
+              >
+                {category.name}
+              </a>
+            ))
+          }
+        </div>
+        <h1 class="text-6xl font-bold pb-8">{content.title}</h1>
+        <p class="text-xl font-medium mb-4">{content.description}</p>
+        <!-- This example requires Tailwind CSS v2.0+ -->
+        <div class="flex">
+          <div class="mr-4 flex-shrink-0 self-center">
+            <img
+              class="h-12 w-12 rounded-full"
+              src=`/images/team/${content.authorUrl}.jpg`
+              alt={content.author}
+            />
+          </div>
+          <div>
+            <a
+              href=`/team/${content.authorUrl}/`
+              class="text-md font-semibold mb-1 capitalize"
+              >{content.author}
+            </a>
+            <p class="text-sm">
+              <time datetime={dayjs(content.date).format()}>
+                {dayjs(content.date).format("MMM D, YYYY")} — 1 minute read</time
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="basis-1/2 text-center">
+        <figure>
+          <div class="flex justify-center">
+            <img
+              src={`/images/blog/${content.featuredImage}/`}
+              alt={content.featuredImageAlt}
+            />
+          </div>
+          <figcaption class="text-sm">
+            {content.featuredImageAlt}
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+  <article
+    class="max-w-3xl mx-auto py-10 md:px-6 prose prose-zinc prose-xl px-4 sm:px-6"
+  >
+    <slot />
+  </article>
+</BaseLayout>

@@ -1,0 +1,103 @@
+---
+// Component imports and setup JavaScript go here!
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { generateTagData } from "../../../utils/helpers.js";
+const allPosts = await Astro.glob("../*.mdx");
+const allTagsUnique = new Set();
+
+allPosts.forEach((post) => {
+  post.frontmatter.tags &&
+    post.frontmatter.tags.map((tag) => {
+      allTagsUnique.add(tag);
+    });
+});
+const sortedAllTagsUnique = Array.from(allTagsUnique).sort();
+
+//TODO: Might use this later for mapping tags with an image
+let coloringPageTags =
+  '{ "tags" : [' +
+  '{ "name":"frogs" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"elephants" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"aliens" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"spaceships" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"foxes" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"squirrels" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"turtles" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"sea-life" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"seals" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"stingrays" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"dinosaurs" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"whales" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"ducks" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"cats" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"rabbits" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"kwaii" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"flowers" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"octopuses" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"owls" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"snails" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"unicorns" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"plankton" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"spongebob-squarepants" , "image":"a-cute-frog-split-screen.webp" } ]}';
+
+const allTagsData = generateTagData(sortedAllTagsUnique);
+
+const title = "Coloring Page Tags";
+---
+
+<BaseLayout title={title}>
+  <section
+    class="py-10 px-4 sm:px-6 w-full mx-auto max-w-screen-2xl text-center"
+  >
+    <h1 class="text-6xl font-bold pb-8">
+      {title}
+    </h1>
+  </section>
+  <div class="py-4 px-4 sm:px-6 w-full mx-auto max-w-screen-2xl">
+    <hr />
+  </div>
+  <section class="py-10 px-4 sm:px-6 w-full mx-auto max-w-screen-2xl">
+    <h2 class="text-xl">
+      Search our awesome <strong>free</strong> coloring pages by<strong>
+        tag
+      </strong>
+    </h2>
+    <div class="py-6 grid grid-cols-2 md:grid-cols-4 gap-3">
+      {
+        allTagsData.map((tag) => (
+          <article class="mb-6">
+            <div>
+              {tag.slug != "coloring-pages" && (
+                <a
+                  class="border border-slate-900 rounded-3xl mb-4 flex overflow-hidden"
+                  href={`/coloring-pages/tags/${tag.slug}/`}
+                  class="p-2 border border-slate-900 rounded-3xl mb-4 flex"
+                >
+                  <img
+                    src={`/images/coloring-pages/tags-${tag.slug}.webp`}
+                    alt={tag.name}
+                  />
+                </a>
+              )}
+              <h3 class="overflow-hidden text-xl">
+                <a
+                  href={`/coloring-pages/tags/${tag.slug}/`}
+                  class="block font-semibold hover:underline"
+                >
+                  {tag.slug === "coloring-pages" && <span>All </span>}
+                  {tag.name}
+                </a>
+                {tag.slug === "coloring-pages" && (
+                  <p class="mt-4">
+                    Not sure what you're looking for? Just browse all of our
+                    coloring pages on this site. They are free!
+                  </p>
+                )}
+              </h3>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

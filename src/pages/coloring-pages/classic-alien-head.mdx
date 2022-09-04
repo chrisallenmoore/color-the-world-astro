@@ -1,0 +1,39 @@
+---
+layout: "../../layouts/ColoringPageLayout.astro"
+title: Classic alien head
+description: "Classic alien head coloring page. Free coloring page."
+date: Jul 9, 2022
+author: chris allen moore
+authorUrl: chris
+authorImage: chris.jpg
+featuredImage: classic-alien-head-split-screen.webp
+featuredImageAlt: Classic alien head (original)
+coloringPageImage: classic-alien-head-coloring-page.webp
+coloringPageAlt: Classic alien head coloring page (original)
+tags:
+  - Coloring Pages
+  - Aliens
+---
+
+Anybody familiar with UFOs and aliens will recognize this classic alien head.
+
+Get this FREE coloring page below. ↓
+
+<figure class="text-center mt-0">
+  <img
+    src={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    alt={frontmatter.coloringPageAlt}
+    class="w-full"
+  />
+  <figcaption class="text-sm">{frontmatter.coloringPageAlt}</figcaption>
+</figure>
+
+<div class="text-center">
+  <a
+    target="_blank"
+    href={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    class="no-underline bg-paradiso-600 hover:bg-paradiso-700 text-white py-4 px-5 rounded-full leading-normal"
+  >
+    <span>Print this coloring page</span>
+  </a>
+</div>

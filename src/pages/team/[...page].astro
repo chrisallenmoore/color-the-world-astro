@@ -1,0 +1,93 @@
+---
+// Component imports and setup JavaScript go here!
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Paginator from "../../components/Paginator.astro";
+
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await Astro.glob("./*.mdx");
+  const sortedPosts = allPosts.sort(
+    (a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf()
+  );
+  //   rss({
+  //   // The RSS Feed title, description, and custom metadata.
+  //   title: 'Jaydan\'s Blog',
+  //   description: 'An example blog on Astro',
+  //   customData: `<language>en-us</language>`,
+  //   // The list of items for your RSS feed, sorted.
+  //   items: sortedPosts.map(item => ({
+  //     title: item.title,
+  //     description: item.description,
+  //     link: item.url,
+  //     pubDate: item.date,
+  //   })),
+  //   // Optional: Customize where the file is written to.
+  //   // Otherwise, defaults to "/rss.xml"
+  //   dest: "/blog/feed.xml",
+  // });
+  return paginate(sortedPosts, { pageSize: 4 });
+}
+const getPosts = await Astro.glob("./*.mdx");
+const postsCount = getPosts.length;
+const title = "Our Team";
+const { page } = Astro.props;
+---
+
+<BaseLayout title={title}>
+  <section
+    class="py-10 px-4 sm:px-6 w-full mx-auto max-w-screen-2xl text-center"
+  >
+    <h1 class="text-6xl font-bold pb-8">
+      {title}
+      <span
+        class="text-xl font-bold bg-gray-100 px-3 py-.5 rounded-full absolute"
+        >{postsCount}
+      </span>
+    </h1>
+    <p class="text-2xl font-medium max-w-3xl mx-auto">
+      Not sure what you're looking for? All of our coloring pages are available
+      for free. Browse our growing collection of coloring pages. Find the
+      coloring pages you're looking for.
+    </p>
+  </section>
+
+  <div class="py-4 px-4 sm:px-6 w-full mx-auto max-w-screen-2xl">
+    <hr />
+  </div>
+
+  <section class="py-10 px-4 sm:px-6 w-full mx-auto max-w-screen-2xl">
+    <h2 class="text-xl">
+      Check out our <strong>awesome team</strong> of creators!
+    </h2>
+
+    <div class="py-6 grid grid-cols-2 md:grid-cols-4 gap-3">
+      {
+        page.data.map((post) => (
+          <article class="mb-6">
+            <div>
+              <a
+                class="border border-slate-900 rounded-3xl mb-4 flex overflow-hidden"
+                href={post.url}
+                class="p-2 border border-slate-900 rounded-3xl mb-4 flex"
+              >
+                <div class="relative aspect-[1/1.2] w-full overflow-hidden">
+                  <img
+                    class="absolute object-cover w-full h-full"
+                    src={`/images/team/${post.frontmatter.creatorImage}/`}
+                    alt={post.frontmatter.creatorImageAlt}
+                  />
+                </div>
+              </a>
+              <h3 class="overflow-hidden text-xl font-semibold hover:underline">
+                <a href={post.url} class="block">
+                  {post.frontmatter.title}
+                </a>
+              </h3>
+              <p class="line-clamp-3">{post.frontmatter.description}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+  <Paginator page={page} />
+</BaseLayout>

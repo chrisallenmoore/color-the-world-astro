@@ -1,0 +1,39 @@
+---
+layout: "../../layouts/ColoringPageLayout.astro"
+title: Happy T-Rex dinosaur
+description: "This happy T-Rex dinosaur is really playful. Free coloring page."
+date: June 14, 2022
+author: chris allen moore
+authorUrl: chris
+authorImage: chris.jpg
+featuredImage: happy-t-rex-dinosaur-split-screen.webp
+featuredImageAlt: Happy T-Rex dinosaur (recreated)
+coloringPageImage: happy-t-rex-dinosaur-coloring-page.webp
+coloringPageAlt: Happy T-Rex dinosaur coloring page (recreated)
+tags:
+  - Coloring Pages
+  - Dinosaurs
+---
+
+Usually, a T-Rex is depicted as scary. But this dino is happy, playful and all heart. This is a fun one to color.
+
+Get this FREE coloring page below. ↓
+
+<figure class="text-center mt-0">
+  <img
+    src={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    alt={frontmatter.coloringPageAlt}
+    class="w-full"
+  />
+  <figcaption class="text-sm">{frontmatter.coloringPageAlt}</figcaption>
+</figure>
+
+<div class="text-center">
+  <a
+    target="_blank"
+    href={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    class="no-underline bg-paradiso-600 hover:bg-paradiso-700 text-white py-4 px-5 rounded-full leading-normal"
+  >
+    <span>Print this coloring page</span>
+  </a>
+</div>

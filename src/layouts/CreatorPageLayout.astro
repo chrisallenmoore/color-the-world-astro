@@ -1,0 +1,50 @@
+---
+// Component imports and setup JavaScript go here!
+import BaseLayout from "./BaseLayout.astro";
+import { generateTagData } from "../utils/helpers.js";
+import dayjs from "dayjs";
+
+const { content } = Astro.props;
+const allTagsData = generateTagData(content.tags);
+---
+
+<BaseLayout>
+  <section class="py-10 px-4 sm:px-6 w-full mx-auto max-w-screen-2xl">
+    <div class="flex">
+      <div class="basis-2/3">
+        <div class="mb-6 flex justify-start gap-1.5">
+          {
+            allTagsData.map((tag) => (
+              <span class="bg-zinc-100 px-3 py-1 rounded-full leading-1 text-sm font-medium">
+                {tag.name}
+              </span>
+            ))
+          }
+        </div>
+        <h1 class="text-6xl font-bold pb-8">{content.title}</h1>
+        <p class="text-xl font-medium mb-4">{content.description}</p>
+      </div>
+      <div class="basis-1/2 text-center">
+        <figure>
+          <div class="flex justify-center">
+            <div class="border border-zinc-900 rounded-2xl overflow-hidden">
+              <img
+                class="rounded-2xl max-w-xs"
+                src={`/images/team/${content.creatorImage}/`}
+                alt={content.creatorImageAlt}
+              />
+            </div>
+          </div>
+          <figcaption class="text-sm mt-2">
+            {content.creatorImageAlt}
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+  <article
+    class="max-w-3xl mx-auto py-10 md:px-6 prose prose-zinc prose-xl px-4 sm:px-6"
+  >
+    <slot />
+  </article>
+</BaseLayout>

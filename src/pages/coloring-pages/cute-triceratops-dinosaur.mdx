@@ -1,0 +1,39 @@
+---
+layout: "../../layouts/ColoringPageLayout.astro"
+title: Cute Triceratops dinosaur
+description: "Triceratops had 3 horns... how cool! Free coloring page."
+date: June 15, 2022
+author: chris allen moore
+authorUrl: chris
+authorImage: chris.jpg
+featuredImage: cute-triceratops-dinosaur-split-screen.webp
+featuredImageAlt: Cute Triceratops dinosaur (recreated)
+coloringPageImage: cute-triceratops-dinosaur-coloring-page.webp
+coloringPageAlt: Cute Triceratops dinosaur coloring page (recreated)
+tags:
+  - Coloring Pages
+  - Dinosaurs
+---
+
+I had a friend named Adam when I was younger. It seemed as if he knew every type of dinosaur's name, looks and tons of other facts. I envied him. One of my favorite dinosaurs is the Triceratops. 3 horns... how cool!
+
+Get this FREE coloring page below. ↓
+
+<figure class="text-center mt-0">
+  <img
+    src={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    alt={frontmatter.coloringPageAlt}
+    class="w-full"
+  />
+  <figcaption class="text-sm">{frontmatter.coloringPageAlt}</figcaption>
+</figure>
+
+<div class="text-center">
+  <a
+    target="_blank"
+    href={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    class="no-underline bg-paradiso-600 hover:bg-paradiso-700 text-white py-4 px-5 rounded-full leading-normal"
+  >
+    <span>Print this coloring page</span>
+  </a>
+</div>

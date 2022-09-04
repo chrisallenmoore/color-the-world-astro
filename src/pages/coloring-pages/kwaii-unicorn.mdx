@@ -1,0 +1,56 @@
+---
+layout: "../../layouts/ColoringPageLayout.astro"
+title: Kwaii Unicorn
+description: "A cute little kwaii unicorn waiting to be colored. Free coloring page."
+date: June 10, 2022
+author: chris allen moore
+authorUrl: chris
+authorImage: chris.jpg
+featuredImage: kwaii-unicorn-split-screen.webp
+featuredImageAlt: A cute kwaii unicorn (recreated)
+coloringPageImage: kwaii-unicorn-coloring-page.webp
+coloringPageAlt: A cute kwaii unicorn coloring page (recreated)
+tags:
+  - Coloring Pages
+  - Unicorns
+  - Kwaii
+---
+
+This is a sweet little kwaii unicorn that I found on the internet and knew I had to recreate it. It's so cute.
+
+Color it in the colors that express you the most.
+
+Get this FREE coloring page below. ↓
+
+<figure class="text-center mt-0">
+  <img
+    src={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    alt={frontmatter.coloringPageAlt}
+    class="w-full"
+  />
+  <figcaption class="text-sm">{frontmatter.coloringPageAlt}</figcaption>
+</figure>
+
+<div class="text-center">
+  <a
+    target="_blank"
+    href={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    class="no-underline bg-paradiso-600 hover:bg-paradiso-700 text-white py-4 px-5 rounded-full leading-normal"
+  >
+    <span>Print this coloring page</span>
+  </a>
+</div>
+
+## Color with us
+
+Want to color along with us? Join Lula as she colors the "Kwaii Unicorn" coloring page.
+
+<div class="text-center">
+  <a
+    target="_blank"
+    href="/blog/color-with-us-spongebob-has-an-idea/"
+    class="no-underline bg-paradiso-600 hover:bg-paradiso-700 text-white py-4 px-5 rounded-full leading-normal"
+  >
+    <span>Color along with Lula</span>
+  </a>
+</div>

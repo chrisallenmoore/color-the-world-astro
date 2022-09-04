@@ -1,0 +1,104 @@
+---
+// Component imports and setup JavaScript go here!
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { generateCategoryData } from "../../../utils/helpers.js";
+const allPosts = await Astro.glob("../*.mdx");
+const allCategoriesUnique = new Set();
+
+allPosts.forEach((post) => {
+  post.frontmatter.categories &&
+    post.frontmatter.categories.map((category) => {
+      allCategoriesUnique.add(category);
+    });
+});
+
+//TODO: Might use this later for mapping categories with an image
+let coloringPageCategories =
+  '{ "categories" : [' +
+  '{ "name":"frogs" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"elephants" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"aliens" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"spaceships" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"foxes" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"squirrels" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"turtles" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"sea-life" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"seals" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"stingrays" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"dinosaurs" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"whales" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"ducks" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"cats" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"rabbits" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"kwaii" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"flowers" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"octopuses" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"owls" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"snails" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"unicorns" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"plankton" , "image":"a-cute-frog-split-screen.webp" },' +
+  '{ "name":"spongebob-squarepants" , "image":"a-cute-frog-split-screen.webp" } ]}';
+
+const allCategoriesData = generateCategoryData(allCategoriesUnique);
+
+const title = "Blog Post Categories";
+---
+
+<BaseLayout title={title}>
+  <section
+    class="py-10 px-4 sm:px-6 w-full mx-auto max-w-screen-2xl text-center"
+  >
+    <h1 class="text-6xl font-bold pb-8">
+      {title}
+    </h1>
+    <p class="text-2xl font-medium max-w-3xl mx-auto">
+      We travel, play games, color pages, do arts and crafts and more! Find our
+      content by category.
+    </p>
+  </section>
+  <div class="py-4 px-4 sm:px-6 w-full mx-auto max-w-screen-2xl">
+    <hr />
+  </div>
+  <section class="py-10 px-4 sm:px-6 w-full mx-auto max-w-screen-2xl">
+    <h2 class="text-xl">
+      Search our awesome <strong>free</strong> content by<strong>
+        category
+      </strong>
+    </h2>
+    <div class="py-6 grid grid-cols-4 gap-3">
+      {
+        allCategoriesData.map((category) => (
+          <article class="mb-6">
+            <div>
+              <!--<a
+                class="border border-slate-900 rounded-3xl mb-4 flex overflow-hidden"
+                href={`/blog/categories/${category.slug}/`}
+                class="p-2 border border-slate-900 rounded-3xl mb-4 flex"
+              >
+                <img
+                  src={`/images/blog/categories-${category.slug}.webp`}
+                  alt={category.name}
+                />
+              </a>-->
+              <h3 class="overflow-hidden text-xl mt-6">
+                <a
+                  href={`/blog/categories/${category.slug}/`}
+                  class="block font-semibold hover:underline"
+                >
+                  {category.slug === "blog" && <span>All </span>}
+                  {category.name}
+                </a>
+                {category.slug === "blog" && (
+                  <p class="mt-4">
+                    Not sure what you're looking for? All of our coloring pages
+                    are available for free.
+                  </p>
+                )}
+              </h3>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

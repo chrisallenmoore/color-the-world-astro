@@ -1,0 +1,16 @@
+---
+// Component imports and setup JavaScript go here!
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "@astrojs/image/components";
+import HeroBanner from "../components/Svelte/HeroBanner.svelte";
+
+const title = "Color the World - Inspire Kid Creativity";
+---
+
+<style lang="scss" scoped>
+
+</style>
+
+<BaseLayout title={title}>
+  <HeroBanner />
+</BaseLayout>

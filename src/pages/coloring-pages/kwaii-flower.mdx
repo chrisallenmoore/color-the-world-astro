@@ -1,0 +1,40 @@
+---
+layout: "../../layouts/ColoringPageLayout.astro"
+title: Kwaii flower
+description: "A kwaii flower coloring page. Free coloring page."
+date: Jul 7, 2022
+author: chris allen moore
+authorUrl: chris
+authorImage: chris.jpg
+featuredImage: kwaii-flower-split-screen.webp
+featuredImageAlt: Kwaii flower (original)
+coloringPageImage: kwaii-flower-coloring-page.webp
+coloringPageAlt: Kwaii flower coloring page (original)
+tags:
+  - Coloring Pages
+  - Flowers
+  - Kwaii
+---
+
+This cute kwaii flower is ready to be colored. It looks so happy.
+
+Get this FREE coloring page below. ↓
+
+<figure class="text-center mt-0">
+  <img
+    src={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    alt={frontmatter.coloringPageAlt}
+    class="w-full"
+  />
+  <figcaption class="text-sm">{frontmatter.coloringPageAlt}</figcaption>
+</figure>
+
+<div class="text-center">
+  <a
+    target="_blank"
+    href={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    class="no-underline bg-paradiso-600 hover:bg-paradiso-700 text-white py-4 px-5 rounded-full leading-normal"
+  >
+    <span>Print this coloring page</span>
+  </a>
+</div>

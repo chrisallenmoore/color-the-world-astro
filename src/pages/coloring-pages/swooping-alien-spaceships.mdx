@@ -1,0 +1,55 @@
+---
+layout: "../../layouts/ColoringPageLayout.astro"
+title: Swooping alien spaceships
+description: "These friendly aliens are flying down to Earth. Free coloring page."
+date: June 15, 2022
+author: chris allen moore
+authorUrl: chris
+authorImage: chris.jpg
+featuredImage: swooping-alien-spaceships-split-screen.webp
+featuredImageAlt: Swooping alien spaceships (recreated)
+coloringPageImage: swooping-alien-spaceships-coloring-page.webp
+coloringPageAlt: Swooping alien spaceships coloring page (recreated)
+colorWithUsUrl: color-with-us-swooping-alien-spaceships
+tags:
+  - Coloring Pages
+  - Aliens
+  - Spaceships
+---
+
+I love aliens, spaceships and outer space. These friendly aliens are flying down to Earth.
+
+Get this FREE coloring page below. ↓
+
+<figure class="text-center mt-0">
+  <img
+    src={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    alt={frontmatter.coloringPageAlt}
+    class="w-full"
+  />
+  <figcaption class="text-sm">{frontmatter.coloringPageAlt}</figcaption>
+</figure>
+
+<div class="text-center">
+  <a
+    target="_blank"
+    href={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    class="no-underline bg-paradiso-600 hover:bg-paradiso-700 text-white py-4 px-5 rounded-full leading-normal"
+  >
+    <span>Print this coloring page</span>
+  </a>
+</div>
+
+## Color with us
+
+Want to color along with us? Join Doyle as he colors the "SpongeBob has and idea" coloring page.
+
+<div class="text-center">
+  <a
+    target="_blank"
+    href={`/blog/${frontmatter.colorWithUsUrl}/`}
+    class="no-underline bg-paradiso-600 hover:bg-paradiso-700 text-white py-4 px-5 rounded-full leading-normal"
+  >
+    <span>Color along with Doyle</span>
+  </a>
+</div>

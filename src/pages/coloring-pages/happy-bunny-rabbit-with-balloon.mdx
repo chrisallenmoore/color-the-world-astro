@@ -1,0 +1,41 @@
+---
+layout: "../../layouts/ColoringPageLayout.astro"
+title: Happy bunny rabbit with balloon
+description: "A happy bunny rabbit with a balloon. Free coloring page."
+date: June 20, 2022
+author: chris allen moore
+authorUrl: chris
+authorImage: chris.jpg
+featuredImage: happy-bunny-rabbit-with-balloon-split-screen.webp
+featuredImageAlt: Happy bunny rabbit with balloon (recreated)
+coloringPageImage: happy-bunny-rabbit-with-balloon-coloring-page.webp
+coloringPageAlt: Happy bunny rabbit with balloon coloring page (recreated)
+tags:
+  - Coloring Pages
+  - Rabbits
+---
+
+This bunny rabbit couldn't be any happier! It's overjoyed with excitement about having a balloon. Feel the excitement when you color it, too!
+
+What color are you going to make the balloon?
+
+Get this FREE coloring page below. ↓
+
+<figure class="text-center mt-0">
+  <img
+    src={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    alt={frontmatter.coloringPageAlt}
+    class="w-full"
+  />
+  <figcaption class="text-sm">{frontmatter.coloringPageAlt}</figcaption>
+</figure>
+
+<div class="text-center">
+  <a
+    target="_blank"
+    href={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    class="no-underline bg-paradiso-600 hover:bg-paradiso-700 text-white py-4 px-5 rounded-full leading-normal"
+  >
+    <span>Print this coloring page</span>
+  </a>
+</div>

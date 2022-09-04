@@ -1,0 +1,39 @@
+---
+layout: "../../layouts/ColoringPageLayout.astro"
+title: Super cute, little, bunny rabbit
+description: "Who doesn't love rabbits? Free coloring page."
+date: June 15, 2022
+author: chris allen moore
+authorUrl: chris
+authorImage: chris.jpg
+featuredImage: super-cute-little-bunny-rabbit-split-screen.webp
+featuredImageAlt: Super cute, little, bunny rabbit (recreated)
+coloringPageImage: super-cute-little-bunny-rabbit-coloring-page.webp
+coloringPageAlt: Super cute, little, bunny rabbit coloring page (recreated)
+tags:
+  - Coloring Pages
+  - Rabbits
+---
+
+Who doesn't love rabbits? Especially super cute little bunnies like this one?
+
+Get this FREE coloring page below. ↓
+
+<figure class="text-center mt-0">
+  <img
+    src={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    alt={frontmatter.coloringPageAlt}
+    class="w-full"
+  />
+  <figcaption class="text-sm">{frontmatter.coloringPageAlt}</figcaption>
+</figure>
+
+<div class="text-center">
+  <a
+    target="_blank"
+    href={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    class="no-underline bg-paradiso-600 hover:bg-paradiso-700 text-white py-4 px-5 rounded-full leading-normal"
+  >
+    <span>Print this coloring page</span>
+  </a>
+</div>

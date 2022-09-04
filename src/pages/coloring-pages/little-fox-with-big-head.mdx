@@ -1,0 +1,39 @@
+---
+layout: "../../layouts/ColoringPageLayout.astro"
+title: Little fox with big head
+description: "Little fox with big head coloring page. Free coloring page."
+date: Jul 10, 2022
+author: chris allen moore
+authorUrl: chris
+authorImage: chris.jpg
+featuredImage: little-fox-with-big-head-split-screen.webp
+featuredImageAlt: Little fox with big head (recreated)
+coloringPageImage: little-fox-with-big-head-coloring-page.webp
+coloringPageAlt: Little fox with big head coloring page (recreated)
+tags:
+  - Coloring Pages
+  - Foxes
+---
+
+This fox must be really smart with such a gigantic head!
+
+Get this FREE coloring page below. ↓
+
+<figure class="text-center mt-0">
+  <img
+    src={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    alt={frontmatter.coloringPageAlt}
+    class="w-full"
+  />
+  <figcaption class="text-sm">{frontmatter.coloringPageAlt}</figcaption>
+</figure>
+
+<div class="text-center">
+  <a
+    target="_blank"
+    href={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    class="no-underline bg-paradiso-600 hover:bg-paradiso-700 text-white py-4 px-5 rounded-full leading-normal"
+  >
+    <span>Print this coloring page</span>
+  </a>
+</div>

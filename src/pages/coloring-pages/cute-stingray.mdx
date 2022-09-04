@@ -1,0 +1,42 @@
+---
+layout: "../../layouts/ColoringPageLayout.astro"
+title: Cute stingray
+description: "Cute stingray coloring page. Free coloring page."
+date: Jul 9, 2022
+author: chris allen moore
+authorUrl: chris
+authorImage: chris.jpg
+featuredImage: cute-stingray-split-screen.webp
+featuredImageAlt: Cute stingray (recreated)
+coloringPageImage: cute-stingray-coloring-page.webp
+coloringPageAlt: Cute stingray coloring page (recreated)
+tags:
+  - Coloring Pages
+  - Stingrays
+  - Sea Life
+---
+
+Stingrays are cool looking, and sometimes aquariums have ones you can even pet!
+
+Color this happy, cute stingray.
+
+Get this FREE coloring page below. ↓
+
+<figure class="text-center mt-0">
+  <img
+    src={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    alt={frontmatter.coloringPageAlt}
+    class="w-full"
+  />
+  <figcaption class="text-sm">{frontmatter.coloringPageAlt}</figcaption>
+</figure>
+
+<div class="text-center">
+  <a
+    target="_blank"
+    href={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    class="no-underline bg-paradiso-600 hover:bg-paradiso-700 text-white py-4 px-5 rounded-full leading-normal"
+  >
+    <span>Print this coloring page</span>
+  </a>
+</div>

@@ -1,0 +1,46 @@
+---
+// Component imports and setup JavaScript go here!
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "About Color the World";
+---
+
+<style lang="scss" scoped>
+
+</style>
+
+<BaseLayout title={title}>
+  <section class="py-10 px-4 sm:px-6 max-w-screen-2xl mx-auto">
+    <div>
+      <h1 class="text-6xl font-bold pb-8 text-center">{title}</h1>
+      <p class="text-2xl font-medium text-center mb-10 md:mb-12">
+        Coloring pages, art, fun and more! Color with us.
+      </p>
+      <div class="prose prose-slate prose-xl mt-10 max-w-3xl mx-auto">
+        <hr />
+        <p>
+          Color the World is an independent publication launched in May 2022.
+          We're a family-friendly place on the internet.
+        </p>
+        <p>
+          We do not include any images from other sites on our webpages.
+          Instead, if we find a coloring page or other ideas that we like, we
+          recreate those works (sometimes with little or many changes). Either
+          way, we end up with better quality and get to practice our art skills.
+          All the recreations are available for free.
+        </p>
+        <p>We also create original works and note them as such.</p>
+        <p>
+          Our goal is to share the very best coloring pages to bring happiness
+          and joy to others.
+        </p>
+      </div>
+    </div>
+    <div class="mt-12 flex justify-center">
+      <a
+        class="bg-paradiso-600 hover:bg-paradiso-700 hover:no-underline py-4 px-3 text-white rounded-xl"
+        href="/team/">Meet our Team</a
+      >
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,39 @@
+---
+layout: "../../layouts/ColoringPageLayout.astro"
+title: Duck walking
+description: "This duck is walking. Where is it going? Free coloring page."
+date: June 15, 2022
+author: chris allen moore
+authorUrl: chris
+authorImage: chris.jpg
+featuredImage: duck-walking-split-screen.webp
+featuredImageAlt: Duck walking (recreated)
+coloringPageImage: duck-walking-coloring-page.webp
+coloringPageAlt: Duck walking coloring page (recreated)
+tags:
+  - Coloring Pages
+  - Ducks
+---
+
+Ducks are water birds that waddle when they walk. This duck is walking. Where is it going?
+
+Get this FREE coloring page below. ↓
+
+<figure class="text-center mt-0">
+  <img
+    src={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    alt={frontmatter.coloringPageAlt}
+    class="w-full"
+  />
+  <figcaption class="text-sm">{frontmatter.coloringPageAlt}</figcaption>
+</figure>
+
+<div class="text-center">
+  <a
+    target="_blank"
+    href={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    class="no-underline bg-paradiso-600 hover:bg-paradiso-700 text-white py-4 px-5 rounded-full leading-normal"
+  >
+    <span>Print this coloring page</span>
+  </a>
+</div>

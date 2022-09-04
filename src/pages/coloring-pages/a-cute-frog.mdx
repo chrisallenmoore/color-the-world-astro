@@ -1,0 +1,41 @@
+---
+layout: "../../layouts/ColoringPageLayout.astro"
+title: A cute frog
+description: "A cute frog waiting for you to color it. Free coloring page."
+date: June 15, 2022
+author: chris allen moore
+authorUrl: chris
+authorImage: chris.jpg
+featuredImage: a-cute-frog-split-screen.webp
+featuredImageAlt: A cute frog (original)
+coloringPageImage: a-cute-frog-coloring-page.webp
+coloringPageAlt: A cute frog coloring page (original)
+tags:
+  - Coloring Pages
+  - Frogs
+---
+
+I used to catch bullfrogs in a pond near the house where I grew up. I would keep them for the day and then let them go.
+
+This cute frog is waiting to be colored.
+
+Get this FREE coloring page below. ↓
+
+<figure class="text-center mt-0">
+  <img
+    src={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    alt={frontmatter.coloringPageAlt}
+    class="w-full"
+  />
+  <figcaption class="text-sm">{frontmatter.coloringPageAlt}</figcaption>
+</figure>
+
+<div class="text-center">
+  <a
+    target="_blank"
+    href={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    class="no-underline bg-paradiso-600 hover:bg-paradiso-700 text-white py-4 px-5 rounded-full leading-normal"
+  >
+    <span>Print this coloring page</span>
+  </a>
+</div>

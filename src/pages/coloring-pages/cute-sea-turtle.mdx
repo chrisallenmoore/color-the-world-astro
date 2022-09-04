@@ -1,0 +1,40 @@
+---
+layout: "../../layouts/ColoringPageLayout.astro"
+title: Cute sea turtle
+description: "Cute sea turtle coloring page. Free coloring page."
+date: Jul 9, 2022
+author: chris allen moore
+authorUrl: chris
+authorImage: chris.jpg
+featuredImage: cute-sea-turtle-split-screen.webp
+featuredImageAlt: Cute sea turtle (recreated)
+coloringPageImage: cute-sea-turtle-coloring-page.webp
+coloringPageAlt: Cute sea turtle coloring page (recreated)
+tags:
+  - Coloring Pages
+  - Turtles
+  - Sea Life
+---
+
+Sea turtles are amazing! They can live for over 100 years. They also can swim more than 10,000 miles a year.
+
+Get this FREE coloring page below. ↓
+
+<figure class="text-center mt-0">
+  <img
+    src={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    alt={frontmatter.coloringPageAlt}
+    class="w-full"
+  />
+  <figcaption class="text-sm">{frontmatter.coloringPageAlt}</figcaption>
+</figure>
+
+<div class="text-center">
+  <a
+    target="_blank"
+    href={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    class="no-underline bg-paradiso-600 hover:bg-paradiso-700 text-white py-4 px-5 rounded-full leading-normal"
+  >
+    <span>Print this coloring page</span>
+  </a>
+</div>

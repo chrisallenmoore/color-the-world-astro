@@ -1,0 +1,40 @@
+---
+layout: "../../layouts/ColoringPageLayout.astro"
+title: Kwaii snail
+description: "A kwaii snail coloring page. Free coloring page."
+date: Jul 7, 2022
+author: chris allen moore
+authorUrl: chris
+authorImage: chris.jpg
+featuredImage: kwaii-snail-split-screen.webp
+featuredImageAlt: Kwaii snail (recreated)
+coloringPageImage: kwaii-snail-coloring-page.webp
+coloringPageAlt: Kwaii snail coloring page (recreated)
+tags:
+  - Coloring Pages
+  - Snails
+  - Kwaii
+---
+
+Snails are cute, slow and fun to color. This kwaii snail is happy to see you and can't wait to be colored.
+
+Get this FREE coloring page below. ↓
+
+<figure class="text-center mt-0">
+  <img
+    src={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    alt={frontmatter.coloringPageAlt}
+    class="w-full"
+  />
+  <figcaption class="text-sm">{frontmatter.coloringPageAlt}</figcaption>
+</figure>
+
+<div class="text-center">
+  <a
+    target="_blank"
+    href={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    class="no-underline bg-paradiso-600 hover:bg-paradiso-700 text-white py-4 px-5 rounded-full leading-normal"
+  >
+    <span>Print this coloring page</span>
+  </a>
+</div>

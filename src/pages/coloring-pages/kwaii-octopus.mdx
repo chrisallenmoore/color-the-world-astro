@@ -1,0 +1,55 @@
+---
+layout: "../../layouts/ColoringPageLayout.astro"
+title: Kwaii octopus
+description: "This kwaii octopus is super cute. Free coloring page."
+date: June 15, 2022
+author: chris allen moore
+authorUrl: chris
+authorImage: chris.jpg
+featuredImage: kwaii-octopus-split-screen.webp
+featuredImageAlt: Kwaii octopus (recreated)
+coloringPageImage: kwaii-octopus-coloring-page.webp
+coloringPageAlt: Kwaii octopus coloring page (recreated)
+colorWithUsUrl: color-with-us-kwaii-octopus
+tags:
+  - Coloring Pages
+  - Octopuses
+  - Kwaii
+---
+
+My daughter, Lula, loves kwaii coloring pages. This kwaii octopus is super cute.
+
+Get this FREE coloring page below. ↓
+
+<figure class="text-center mt-0">
+  <img
+    src={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    alt={frontmatter.coloringPageAlt}
+    class="w-full"
+  />
+  <figcaption class="text-sm">{frontmatter.coloringPageAlt}</figcaption>
+</figure>
+
+<div class="text-center">
+  <a
+    target="_blank"
+    href={`/images/coloring-pages/${frontmatter.coloringPageImage}/`}
+    class="no-underline bg-paradiso-600 hover:bg-paradiso-700 text-white py-4 px-5 rounded-full leading-normal"
+  >
+    <span>Print this coloring page</span>
+  </a>
+</div>
+
+## Color with us
+
+Want to color along with us? Join Lula as she colors the "SpongeBob has and idea" coloring page.
+
+<div class="text-center">
+  <a
+    target="_blank"
+    href={`/blog/${frontmatter.colorWithUsUrl}/`}
+    class="no-underline bg-paradiso-600 hover:bg-paradiso-700 text-white py-4 px-5 rounded-full leading-normal"
+  >
+    <span>Color along with Lula</span>
+  </a>
+</div>

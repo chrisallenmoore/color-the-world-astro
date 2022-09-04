@@ -1,0 +1,100 @@
+---
+// Component imports and setup JavaScript go here!
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { generateTagData } from "../../../utils/helpers.js";
+
+export async function getStaticPaths() {
+  const allPosts = await Astro.glob("../*.mdx");
+  const sortedPosts = allPosts.sort(
+    (a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf()
+  );
+  const alltagsUnique = new Set();
+  sortedPosts.forEach((post) => {
+    post.frontmatter.tags &&
+      post.frontmatter.tags.map((tag) => {
+        alltagsUnique.add(tag);
+      });
+  });
+  const allTagsData = generateTagData(alltagsUnique);
+  // map through the tags array
+  return allTagsData.map((tag) => {
+    // filter the posts that match the given tag
+    const posts = sortedPosts.filter((post) =>
+      post.frontmatter.tags.includes(tag.name)
+    );
+    return {
+      params: { slug: tag.slug },
+      props: {
+        tag: tag.name,
+        posts: posts,
+      },
+    };
+  });
+}
+
+const { tag, posts } = Astro.props;
+const postsCount = posts.length;
+const title = `Coloring Pages with ${tag}`;
+---
+
+<BaseLayout title={title}>
+  <section
+    class="py-10 px-4 sm:px-6 w-full mx-auto max-w-screen-2xl text-center"
+  >
+    <h1 class="text-6xl font-bold pb-8">
+      Coloring Pages
+      <br />
+      <span class="text-2xl font-medium max-w-3xl mx-auto">
+        with {tag === "Coloring Pages" && <span>the tag of </span>}
+        {tag}
+      </span>
+      <span
+        class="text-xl font-bold bg-gray-100 px-3 py-.5 rounded-full absolute"
+        >{postsCount}
+      </span>
+    </h1>
+  </section>
+  <div class="py-4 px-4 sm:px-6 w-full mx-auto max-w-screen-2xl">
+    <hr />
+  </div>
+  <section class="py-10 px-4 sm:px-6 w-full mx-auto max-w-screen-2xl">
+    <h2 class="text-xl">
+      Check out our awesome <strong>free</strong> coloring pages with {
+        tag === "Coloring Pages" && <span>the tag of </span>
+      }<strong>{tag}</strong>
+    </h2>
+    <div class="py-6 grid grid-cols-4 gap-3">
+      {
+        posts.map((post) => (
+          <article class="mb-6">
+            <div>
+              <a
+                class="border border-slate-900 rounded-3xl mb-4 flex overflow-hidden"
+                href={post.url}
+                class="p-2 border border-slate-900 rounded-3xl mb-4 flex"
+              >
+                <img
+                  src={`/images/coloring-pages/${post.frontmatter.featuredImage}/`}
+                  alt={post.frontmatter.featuredImageAlt}
+                />
+              </a>
+              <h3 class="overflow-hidden text-xl font-semibold hover:underline">
+                <a href={post.url} class="block">
+                  {post.frontmatter.title}
+                </a>
+              </h3>
+              <p>{post.frontmatter.description}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+  <section
+    class="py-10 px-4 sm:px-6 w-full mx-auto max-w-screen-2xl text-center"
+  >
+    <a href="/coloring-pages/tags/" class="text-xl">
+      Search all coloring pages by tags
+    </a>
+  </section>
+</BaseLayout>
