@@ -8,6 +8,7 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: "https://chrisallenmoore.github.io",
+  base: "/",
   trailingSlash: "always",
   vite: {
     ssr: {
