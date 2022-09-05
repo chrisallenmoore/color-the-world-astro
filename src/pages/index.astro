@@ -4,13 +4,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "@astrojs/image/components";
 import HeroBanner from "../components/Svelte/HeroBanner.svelte";
 
-const title = "Color the World - Inspire Kid Creativity";
+const title = "Inspire Kid Creativity";
 ---
 
 <style lang="scss" scoped>
 
 </style>
 
-<BaseLayout title={title}>
+<BaseLayout title={`Color the World - ${title} `}>
   <HeroBanner />
 </BaseLayout>
