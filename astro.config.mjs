@@ -15,17 +15,5 @@ export default defineConfig({
       external: ["svgo"],
     },
   },
-  integrations: [
-    react(),
-    svelte(),
-    image(),
-    mdx(),
-    partytown({
-      // Adds dataLayer.push as a forwarding-event.
-      config: {
-        forward: ["dataLayer.push"],
-      },
-    }),
-    tailwind({}),
-  ],
+  integrations: [react(), svelte(), image(), mdx(), partytown(), tailwind({})],
 });
