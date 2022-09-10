@@ -70,7 +70,7 @@ const title = "Coloring Page Tags";
               {tag.slug != "coloring-pages" && (
                 <a
                   class="border border-slate-900 rounded-3xl mb-4 flex overflow-hidden"
-                  href={`/coloring-pages/tags/${tag.slug}/`}
+                  href={`/coloring-pages/tag/${tag.slug}/`}
                   class="p-2 border border-slate-900 rounded-3xl mb-4 flex"
                 >
                   <img
@@ -81,7 +81,7 @@ const title = "Coloring Page Tags";
               )}
               <h3 class="overflow-hidden text-xl">
                 <a
-                  href={`/coloring-pages/tags/${tag.slug}/`}
+                  href={`/coloring-pages/tag/${tag.slug}/`}
                   class="block font-semibold hover:underline"
                 >
                   {tag.slug === "coloring-pages" && <span>All </span>}
