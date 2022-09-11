@@ -3,7 +3,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import NavBar from "../components/Svelte/NavBar.svelte";
 import Footer from "../components/Svelte/Footer.svelte";
-const { pageTitle, pageDescription, pageImage } = Astro.props;
+const { pageTitle, pageDescription, pageImage, pageType } = Astro.props;
 ---
 
 <style is:global>
@@ -31,6 +31,7 @@ const { pageTitle, pageDescription, pageImage } = Astro.props;
   pageTitle={pageTitle}
   pageDescription={pageDescription}
   pageImage={pageImage}
+  pageType={pageType}
 />
 
 <body>

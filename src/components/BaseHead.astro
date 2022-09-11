@@ -1,6 +1,6 @@
 ---
 import SEO from "simple-astro-seo";
-const { pageTitle, pageDescription, pageImage } = Astro.props;
+const { pageTitle, pageDescription, pageImage, pageType } = Astro.props;
 ---
 
 <!-- Google tag (gtag.js) -->
@@ -30,5 +30,6 @@ const { pageTitle, pageDescription, pageImage } = Astro.props;
   title={pageTitle}
   description={pageDescription}
   siteName="Color the World"
+  pageType={pageType}
   url={Astro.request.url}
 />
