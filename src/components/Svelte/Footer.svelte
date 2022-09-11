@@ -1,8 +1,8 @@
 <footer class="bg-white">
   <div class="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
-    <a class="block mb-8" href="/"
+    <a class="mb-8 block" href="/"
       ><img
-        class="h-12 mx-auto text-center"
+        class="mx-auto h-12 text-center"
         src="/images/color-the-world-logo.svg"
         alt="Color the World logo"
       /></a

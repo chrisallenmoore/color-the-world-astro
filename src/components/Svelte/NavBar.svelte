@@ -34,8 +34,8 @@
   //TODO: add click outside function to close mobile menu
 </script>
 
-<div class="relative bg-white z-10">
-  <div class="w-full mx-auto max-w-screen-2xl">
+<div class="relative z-10 bg-white">
+  <div class="mx-auto w-full max-w-screen-2xl">
     <div
       class="flex items-center justify-between py-6 px-4 sm:px-6 md:justify-start md:space-x-10"
     >
@@ -97,7 +97,7 @@
           To: "opacity-0 scale-95"
       -->
   <div
-    class="absolute z-10 w-full inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden opacity-0 scale-95 h-0"
+    class="absolute inset-x-0 top-0 z-10 h-0 w-full origin-top-right scale-95 transform p-2 opacity-0 transition md:hidden"
     class:mobileActive={currentMenu === "mobile"}
     use:clickOutside
     on:click_outside={handleClickOutsideMobileMenu}
@@ -144,28 +144,28 @@
           <nav class="grid gap-y-8">
             <a
               href="/coloring-pages/"
-              class="-m-3 flex items-center rounded-md p-3  transition duration:200 hover:no-underline hover:bg-paradiso-600 text-zinc-900 hover:text-white"
+              class="duration:200 -m-3 flex items-center rounded-md  p-3 text-zinc-900 transition hover:bg-paradiso-600 hover:text-white hover:no-underline"
             >
               <span class="ml-3 text-base font-medium">Coloring Pages</span>
             </a>
 
             <a
               href="/about/"
-              class="-m-3 flex items-center rounded-md p-3  transition duration:200 hover:no-underline hover:bg-paradiso-600 text-zinc-900 hover:text-white"
+              class="duration:200 -m-3 flex items-center rounded-md  p-3 text-zinc-900 transition hover:bg-paradiso-600 hover:text-white hover:no-underline"
             >
               <span class="ml-3 text-base font-medium">About</span>
             </a>
 
             <a
               href="/team/"
-              class="-m-3 flex items-center rounded-md p-3  transition duration:200 hover:no-underline hover:bg-paradiso-600 text-zinc-900 hover:text-white"
+              class="duration:200 -m-3 flex items-center rounded-md  p-3 text-zinc-900 transition hover:bg-paradiso-600 hover:text-white hover:no-underline"
             >
               <span class="ml-3 text-base font-medium">Team</span>
             </a>
 
             <a
               href="/blog/"
-              class="-m-3 flex items-center rounded-md p-3  transition duration:200 hover:no-underline hover:bg-paradiso-600 text-zinc-900 hover:text-white"
+              class="duration:200 -m-3 flex items-center rounded-md  p-3 text-zinc-900 transition hover:bg-paradiso-600 hover:text-white hover:no-underline"
             >
               <span class="ml-3 text-base font-medium">Blog</span>
             </a>
@@ -174,7 +174,7 @@
       </div>
       <div class="space-y-6 py-6 px-5">
         <p
-          class="text-base font-medium text-zinc-900 hover:text-zinc-700 uppercase"
+          class="text-base font-medium uppercase text-zinc-900 hover:text-zinc-700"
         >
           Support us - purchase our books
         </p>
@@ -182,7 +182,7 @@
           <a
             target="_blank"
             href="https://www.amazon.com/First-Toddler-Coloring-Book-Kindergarten/dp/B0B86ZBN37"
-            class="text-base font-medium text-zinc-900 flex"
+            class="flex text-base font-medium text-zinc-900"
             ><span class="sr-only">Amazon</span>
             <svg
               class="h-6 w-6"
@@ -202,7 +202,7 @@
         <div>
           <a
             href="#"
-            class="flex w-full items-center justify-center rounded-md border border-transparent hover:no-underline bg-paradiso-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-paradiso-700"
+            class="flex w-full items-center justify-center rounded-md border border-transparent bg-paradiso-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-paradiso-700 hover:no-underline"
             >Sign up for our newsletter</a
           >
         </div>

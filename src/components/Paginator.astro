@@ -6,7 +6,7 @@ const { page } = Astro.props;
   {
     page.url.prev && (
       <a
-        class="bg-paradiso-600 p-2 rounded-xl text-white hover:no-underline hover:bg-paradiso-700"
+        class="bg-paradiso-600 hover:bg-paradiso-700 rounded-xl p-2 text-white hover:no-underline"
         href={page.url.prev}
         title="Go to Previous"
       >
@@ -17,7 +17,7 @@ const { page } = Astro.props;
   {
     page.url.next && (
       <a
-        class="bg-paradiso-600 p-2 rounded-xl text-white hover:no-underline hover:bg-paradiso-700"
+        class="bg-paradiso-600 hover:bg-paradiso-700 rounded-xl p-2 text-white hover:no-underline"
         href={page.url.next}
         title="Go to Next"
       >
