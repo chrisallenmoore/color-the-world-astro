@@ -30,16 +30,22 @@ export async function getStaticPaths({ paginate }) {
 }
 const getPosts = await Astro.glob("./*.mdx");
 const postsCount = getPosts.length;
-const title = "Coloring Pages";
+const pageTitle = "Coloring Pages";
+const pageDescription = "Color the World Coloring Pages";
+const pageImage = "https://colortheworld.art/images/color-the-world-logo.png";
 const { page } = Astro.props;
 ---
 
-<BaseLayout title={`${title} | Color the World`}>
+<BaseLayout
+  pageTitle={`${pageTitle} | Color the World`}
+  pageDescription={pageDescription}
+  pageImage={pageImage}
+>
   <section
     class="py-10 px-4 sm:px-6 w-full mx-auto max-w-screen-2xl text-center"
   >
     <h1 class="text-6xl font-bold pb-8">
-      {title}
+      {pageTitle}
       <span
         class="text-xl font-bold bg-gray-100 px-3 py-.5 rounded-full absolute"
         >{postsCount}

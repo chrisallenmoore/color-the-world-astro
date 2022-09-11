@@ -36,10 +36,16 @@ export async function getStaticPaths() {
 
 const { tag, posts } = Astro.props;
 const postsCount = posts.length;
-const title = `Coloring Pages with ${tag}`;
+const pageTitle = `Coloring Pages with ${tag}`;
+const pageDescription = `Color the World Coloring Pages with ${tag}`;
+const pageImage = `https://colortheworld.art/images/coloring-pages/tags-${tag.toLowerCase()}.webp`;
 ---
 
-<BaseLayout title={`${title} | Color the World`}>
+<BaseLayout
+  pageTitle={`${pageTitle} | Color the World`}
+  pageDescription={pageDescription}
+  pageImage={pageImage}
+>
   <section
     class="py-10 px-4 sm:px-6 w-full mx-auto max-w-screen-2xl text-center"
   >

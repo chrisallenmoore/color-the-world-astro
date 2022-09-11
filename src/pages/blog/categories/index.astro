@@ -41,15 +41,21 @@ let coloringPageCategories =
 
 const allCategoriesData = generateCategoryData(allCategoriesUnique);
 
-const title = "Blog Post Categories";
+const pageTitle = "Blog Posts Categories";
+const pageDescription = "Color the World Blog post categories";
+const pageImage = "https://colortheworld.art/images/color-the-world-logo.png";
 ---
 
-<BaseLayout title={`${title} | Color the World`}>
+<BaseLayout
+  pageTitle={`${pageTitle} | Color the World`}
+  pageDescription={pageDescription}
+  pageImage={pageImage}
+>
   <section
     class="py-10 px-4 sm:px-6 w-full mx-auto max-w-screen-2xl text-center"
   >
     <h1 class="text-6xl font-bold pb-8">
-      {title}
+      {pageTitle}
     </h1>
     <p class="text-2xl font-medium max-w-3xl mx-auto">
       We travel, play games, color pages, do arts and crafts and more! Find our

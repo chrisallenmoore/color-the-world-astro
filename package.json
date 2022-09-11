@@ -32,6 +32,7 @@
   "dependencies": {
     "@astro-community/astro-embed-youtube": "^0.1.1",
     "@astrojs/partytown": "^1.0.0",
+    "@julian_cataldo/astro-seo": "^0.13.2",
     "astro-embed": "^0.1.1",
     "lit": "^2.1.1",
     "uninstall": "^0.0.0"

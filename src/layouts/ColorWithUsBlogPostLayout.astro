@@ -8,7 +8,11 @@ const { content } = Astro.props;
 const allCategoriesData = generateCategoryData(content.categories);
 ---
 
-<BaseLayout title={`Blog - ${content.title} | Color the World`}>
+<BaseLayout
+  pageTitle={`Blog - ${content.title} | Color the World`}
+  pageDescription={content.description}
+  pageImage={`https://colortheworld.art/images/blog/${content.featuredImage}`}
+>
   <section class="py-10 px-4 sm:px-6 w-full mx-auto max-w-screen-2xl">
     <div class="flex flex-col md:flex-row">
       <div class="w-full md:basis-1/2">

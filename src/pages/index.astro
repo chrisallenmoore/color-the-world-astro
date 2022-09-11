@@ -4,9 +4,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "@astrojs/image/components";
 import HeroBanner from "../components/Svelte/HeroBanner.svelte";
 
-const title = "Inspire Kid Creativity";
+const pageTitle = "Color the World - Inspire Kid Creativity";
+const pageDescription =
+  "Color the World is the place to inspire kids. We have awesome coloring pages, crafts and more.";
+const pageImage = "https://colortheworld.art/images/color-the-world-logo.png";
 ---
 
-<BaseLayout title={`Color the World - ${title} `}>
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  pageImage={pageImage}
+>
   <HeroBanner />
 </BaseLayout>

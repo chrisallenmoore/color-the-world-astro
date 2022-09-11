@@ -42,15 +42,21 @@ let coloringPageTags =
 
 const allTagsData = generateTagData(sortedAllTagsUnique);
 
-const title = "Coloring Page Tags";
+const pageTitle = "Coloring Page Tags";
+const pageDescription = "Coloring pages by Color the World";
+const pageImage = "https://colortheworld.art/images/color-the-world-logo.png";
 ---
 
-<BaseLayout title={`${title} | Color the World`}>
+<BaseLayout
+  pageTitle={`${pageTitle} | Color the World`}
+  pageDescription={pageDescription}
+  pageImage={pageImage}
+>
   <section
     class="py-10 px-4 sm:px-6 w-full mx-auto max-w-screen-2xl text-center"
   >
     <h1 class="text-6xl font-bold pb-8">
-      {title}
+      {pageTitle}
     </h1>
   </section>
   <div class="py-4 px-4 sm:px-6 w-full mx-auto max-w-screen-2xl">

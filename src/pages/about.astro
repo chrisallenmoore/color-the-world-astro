@@ -2,17 +2,20 @@
 // Component imports and setup JavaScript go here!
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const title = "About";
+const pageTitle = "About";
+const pageDescription =
+  "Color the World is the place to inspire kids. We have awesome coloring pages, crafts and more.";
+const pageImage = "https://colortheworld.art/images/color-the-world-logo.png";
 ---
 
-<style lang="scss" scoped>
-
-</style>
-
-<BaseLayout title={`${title} Color the World`}>
+<BaseLayout
+  pageTitle={`${pageTitle} Color the World`}
+  pageDescription={pageDescription}
+  pageImage={pageImage}
+>
   <section class="py-10 px-4 sm:px-6 max-w-screen-2xl mx-auto">
     <div>
-      <h1 class="text-6xl font-bold pb-8 text-center">{title}</h1>
+      <h1 class="text-6xl font-bold pb-8 text-center">{pageTitle}</h1>
       <p class="text-2xl font-medium text-center mb-10 md:mb-12">
         Coloring pages, art, fun and more! Color with us.
       </p>
