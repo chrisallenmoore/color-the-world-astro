@@ -1,5 +1,5 @@
 ---
-import SEO from "@julian_cataldo/astro-seo/SEO.astro";
+import SEO from "simple-astro-seo";
 const { pageTitle, pageDescription, pageImage } = Astro.props;
 ---
 
@@ -29,5 +29,6 @@ const { pageTitle, pageDescription, pageImage } = Astro.props;
   image={pageImage}
   title={pageTitle}
   description={pageDescription}
-  siteName={"Color the World"}
+  siteName="Color the World"
+  url={Astro.request.url}
 />
