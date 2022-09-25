@@ -45,7 +45,8 @@
           <img
             class="h-12 w-auto sm:h-16"
             src="/images/color-the-world-logo.svg"
-            width="200px"
+            width="300"
+            height="55"
             alt="Color the World logo"
           />
         </a>

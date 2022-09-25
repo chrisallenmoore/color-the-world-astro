@@ -20,6 +20,8 @@
         src="/images/sonic-hero.webp"
         alt="Sonic hero"
         class="max-w-[200px] md:max-w-[280px] lg:max-w-[380px]"
+        width="380"
+        height="447"
       />
     </div>
   </div>
